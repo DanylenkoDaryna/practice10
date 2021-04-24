@@ -13,6 +13,7 @@ public class Test {
                     ";user=testUser;password=testPass";
 
     public static void main(String[] args) throws SQLException {
+
         // MySQL
         Connection con =
                 DriverManager.getConnection(CONNECTION_URL_MYSQL);
@@ -22,5 +23,6 @@ public class Test {
         Connection con2 =
                 DriverManager.getConnection(CONNECTION_URL_DERBY);
         System.out.println(con2);
+        
     }
 }

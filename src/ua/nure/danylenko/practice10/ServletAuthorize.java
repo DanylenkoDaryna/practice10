@@ -14,6 +14,7 @@ import java.util.Map;
 public class ServletAuthorize extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         String login = request.getParameter("login");
         String pass = request.getParameter("password");
 
@@ -21,9 +22,12 @@ public class ServletAuthorize extends HttpServlet {
 
         Connection con = (Connection) request.getAttribute("con");
         if(con==null){
+
             System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+
         }
         try(Statement stmt = con.createStatement();
+
             ResultSet rs = stmt.executeQuery("SELECT login, password FROM users")) {
             while (rs.next()) {
                 users.put(rs.getString("login"),

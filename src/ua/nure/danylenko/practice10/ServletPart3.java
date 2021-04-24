@@ -16,6 +16,7 @@ public class ServletPart3 extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
+
         Map<String, String> names=new HashMap<>();
         getServletContext().setAttribute("names", names);
         super.init();
@@ -23,6 +24,7 @@ public class ServletPart3 extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         request.setCharacterEncoding("cp1251");
         response.setCharacterEncoding("cp1251");
         String name = request.getParameter("name");
@@ -35,6 +37,7 @@ public class ServletPart3 extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         req.setCharacterEncoding("cp1251");
         resp.setCharacterEncoding("cp1251");
         Map<String, String> names= (Map<String, String>) getServletContext().getAttribute("names");
